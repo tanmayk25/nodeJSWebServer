@@ -1,0 +1,10 @@
+while [ $# -gt 0 ] ; do
+  case $1 in
+    -s | -document_root) S="$2" ;;
+    -u | -port) U="$2" ;;
+
+  esac
+  shift
+done
+echo "Server is running on http://127.0.0.1:$U and directory:$S";
+node ./app.js $S $U;
